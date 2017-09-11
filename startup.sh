@@ -39,7 +39,6 @@ apiServerExtraArgs:
   runtime-config: api/all,admissionregistration.k8s.io/v1alpha1
   admission-control: PodPreset,Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,ResourceQuota
 cloudProvider: gce
-kubernetesVersion: stable-1.7
 networking:
   podSubnet: 192.168.0.0/16
 EOF
