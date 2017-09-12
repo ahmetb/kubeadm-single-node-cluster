@@ -1,4 +1,6 @@
 #! /bin/bash
+set -e
+set -x
 
 sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
@@ -44,7 +46,7 @@ networking:
   podSubnet: 192.168.0.0/16
 EOF
 
-KUBERNETES_VERSION=$(curl -s -H "Metadata-Flavor: Google" \
+export KUBERNETES_VERSION=$(curl -s -H "Metadata-Flavor: Google" \
   http://metadata.google.internal/computeMetadata/v1/instance/attributes/kubernetes-version)
 
 sudo kubeadm init --config=kubeadm.conf
